@@ -1,0 +1,78 @@
+class Atm_system:
+    def __init__(self,initial_balance=0):
+        self.balance=initial_balance
+    def deposit(self):
+        amount=int(input("enter the money"))
+        self.balance+=amount
+        print(f"Rs.{amount}deposited successfully")
+    def withdraw(self):
+            amount=int(input("enter the money you want to withdraw"))
+            if amount>self.balance:
+                print(f"Rs{amount}withdraw successfully")
+    def check_balance(self):
+            print(f"current Balance:Rs{self.balance}")
+    def exit(self):
+            print("Thanks for using our ATm service.Have a great day")
+atm=Atm_system(initial_balance=35000)
+while True:
+    print("\n------ATM Menu--------")
+    print("1.Deposit")
+    print("2.Withdraw")
+    print("3.check_balance")
+    print("4.exit")
+    choice=int(input("Enter your choice:"))
+    if choice==1:
+        atm.deposit()
+    elif choice==2:
+        atm.withdraw()
+    elif choice==3:
+        atm.check_balance()
+    elif choice==4:
+        atm.exit()
+        break
+    else:
+        print("Invalid choice.please try again")
+
+
+
+20/5/25
+
+
+class Banking:
+    def __init__(self,name,balance):
+        self.name=name
+        self.__balance=balance
+    def deposit(self):
+        amount=int(input("enter the money"))
+        self.balance+=amount
+        print(f"Rs.{amount}deposited successfully")
+    def withdraw(self):
+            amount=int(input("enter the money you want to withdraw"))
+            if amount>self.__balance:
+                print("Insufficient Balance")
+            else:
+                self.__balance=amount
+                print(f"Rs{amount}withdraw successfully")
+    def check_balance(self):
+            print(f"current Balance:Rs{self.__balance}")
+    def exit(self):
+        print("Thanks for using our ATm service.Have a great day")
+bank=Banking(initial_balance=35000)
+while True:
+    print("\n------ATM Menu--------")
+    print("1.Deposit")
+    print("2.Withdraw")
+    print("3.check_balance")
+    print("4.exit")
+    choice=int(input("Enter your choice:"))
+    if choice==1:
+        atm.deposit()
+    elif choice==2:
+        atm.withdraw()
+    elif choice==3:
+        atm.check_balance()
+    elif choice==4:
+        atm.exit()
+        break
+    else:
+        print("Invalid choice.please try again")

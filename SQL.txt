@@ -1,0 +1,108 @@
+create table student
+(
+id int,
+Name varchar(50),
+age int,
+email varchar(100)
+);
+insert into student(id,Name,age,email)values(1,"Bhavya",20,"bhavya.com");
+insert into student(id,Name,age,email)value(2,"Sai",20,"Sai.com");
+insert into student(id,Name,age,email)value(3,"Hifza",20,"hifza.com");
+select *from student;
+
+---------------------------------------------------------------------------------------------------
+
+create table employee
+(
+empid int,
+empName varchar(500),
+department varchar(100),
+salary int
+);
+#insert into employee(empid,empName,department,salary)values(101,"Bhavya","Technical",50000);
+#insert into employee(empid,empName,department,salary)values(102,"Hifza","Technical",80000);
+#insert into employee(empid,empName,department,salary)values(103,"sai","non Technical",50000);
+#insert into employee(empid,empName,department,salary)values(104,"teja","HR",90000);
+#insert into employee(empid,empName,department,salary)values(105,"umar","Technical",5000);
+#insert into employee(empid,empName,department,salary)values(106,"rupa","non Technical",110000);
+#insert into employee(empid,empName,department,salary)values(107,"vasanti","Technical",20000);
+#insert into employee(empid,empName,department,salary)values(108,"sree","non Technical",30000);
+#insert into employee(empid,empName,department,salary)values(109,"lakshmi","Technical",40000);
+#insert into employee(empid,empName,department,salary)values(110,"shaik","non Technical",70000);
+insert into employee(empid,empName,department,salary)values
+(101,"Bhavya","Technical",50000),
+(102,"Hifza","Technical",80000),
+(103,"sai","non Technical",50000),
+(104,"teja","HR",90000),
+(105,"umar","Technical",5000),
+(106,"rupa","non Technical",110000),
+(107,"vasanti","Technical",20000),
+(108,"sree","non Technical",30000),
+(109,"lakshmi","Technical",40000),
+(110,"shaik","non Technical",70000);
+select empid,empName from employee;
+select *from employee;
+
+#--------------------------------------------update-----------------
+create table sales
+(
+SNO int,
+product_id int,
+product_Name varchar(100),
+Quantity int,
+category varchar(200)
+);
+insert into sales(SNO,product_id,product_Name,Quantity,category)values
+(1,101,"science",1,"Books"),
+(2,102,"Zara",2,"footwear"),
+(3,103,"headphones",3,"electronics"),
+(4,104,"bluethoth",2,"electronics"),
+(5,105,"smartwatch",1,"electronics"),
+(6,106,"mixer",2,"homeappliance"),
+(7,107,"filter",3,"homeappliance"),
+(8,108,"maths",9,"books"),
+(9,109,"english",5,"books"),
+(10,110,"western",7,"cloths");
+#select *from sales;
+#select SNO,product_id,product_Name,Quantity
+#from sales
+#where category="electronics";
+#find total no of products solds from above table
+#select sum(Quantity) as total_sales
+#from sales
+#where category="electronics";
+#--------------------Update---------------------
+update sales
+set Quantity=89
+where product_id=106;
+select * 
+from sales
+where SNO=6;
+#-------------------------delete---------------------
+create table sales
+(
+SNO int,
+product_id int,
+product_Name varchar(100),
+Quantity int,
+category varchar(200)
+);
+insert into sales(SNO,product_id,product_Name,Quantity,category)values
+(1,101,"science",1,"Books"),
+(2,102,"Zara",2,"footwear"),
+(3,103,"headphones",3,"electronics"),
+(4,104,"bluethoth",2,"electronics"),
+(5,105,"smartwatch",1,"electronics"),
+(6,106,"mixer",2,"homeappliance"),
+(7,107,"filter",3,"homeappliance"),
+(8,108,"maths",9,"books"),
+(9,109,"english",5,"books"),
+(10,110,"western",7,"cloths");
+#----------------Alter in Drop------------------------
+alter table sales drop column SNO;
+alter table sales  add column price int;
+#select * from sales
+#----------------delete----------
+delete from sales
+where product_id=102;
+select * from sales;

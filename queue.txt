@@ -1,0 +1,57 @@
+#Queue
+
+class queue:
+    def __init__(self):
+        self.Q=[]
+        self.front=-1
+        self.rare=-1
+    def enqueue(self,value):
+        if self.front==-1:
+            self.front=0
+        self.rare=self.rare+1
+        self.Q.append(value)
+    def dequeue(self):
+        if self.is_empty():
+            return "Queue is empty!"
+        value=self.Q[self.front]
+        self.front+=1
+        if self.front>self.rare:
+            self.front=self.rare=-1
+        return value
+    def is_empty(self):
+        return self.front==-1 or self.front>self.rare
+    def size(size):
+        if self.is_empty():
+            return 0
+        return self.rare-self.front+1
+    def display(self):
+        if self.is_empty():
+            print("Queue is empty!")
+        else:
+            print(self.Q[self.front:self.rare+1])
+q=queue()
+while True:
+    print("1.Enqueue")
+    print("2.Dequeue")
+    print("3.is_empty")
+    print("4.display")
+    print("exit")
+    n=int(input("enter your choice"))
+    if n==1:
+         value=int(input("enter the value "))
+         q.enqueue(value)
+    elif n==2:
+        q.dequeue()
+    elif n==3:
+        q.is_empty()
+        print(is_empty())
+    elif n==4:
+        q.display()
+    else:
+        print("exit")
+        break
+
+
+
+
+
