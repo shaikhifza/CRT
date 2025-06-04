@@ -1,14 +1,14 @@
 import mysql.connector
+
 def connect():
-    connection=mysql.connector.connect(
+    conn = mysql.connector.connect(
         host="localhost",
         user="root",
-        password="HIFZA@SHAIK18/",
-        database="practice_crt"
+        password="#S@i09_16", 
+        database="online_quiz_system"
     )
-    return connection
+    return conn
 if(connect()):
-    print("connection established")
+    print("Connection established successfully")
 else:
-    print("connection failed")
-
+    print("Connection failed")
