@@ -1,0 +1,41 @@
+#Normal search of number
+
+
+def binary_search(arr,target):
+     #claculate start,end,mid values
+    start=0
+    end=len(arr)-1
+    mid=(start+end)//2
+    while start<=end:
+        if arr[mid]==target:
+             return mid
+        elif target>arr[mid]:
+            start=mid+1
+        else:
+            end=mid-1
+        mid=(start+end)//2
+    return -1
+arr=list(map(int,input().split()))
+target=input()
+res=binary_search(arr,target)
+print(res)
+
+#Having Duplicates Little changes
+
+class Solution:
+    def binarysearch(self, arr, k):
+        # Code Here
+        start=0
+        end=len(arr)-1
+        result=-1
+        while start<=end:
+            mid=(start+end)//2
+            if arr[mid]==k:
+                result=mid
+                end=mid-1
+            elif k>arr[mid]:
+                start=mid+1
+            else:
+                end=mid-1
+        
+        return result
